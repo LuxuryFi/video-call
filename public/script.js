@@ -21,10 +21,10 @@ showChat.addEventListener("click", () => {
 
 const user = prompt("Enter your name");
 
-var peer = new Peer('35.200.80.187:3307', {
-  path: "/peerjs",
-  host: "/",
-  port: "443",
+var peer = new Peer(undefined, {
+  host: '35.200.80.187',
+  port: 3007,
+  path: '/peerjs',
 });
 
 let myVideoStream;
@@ -38,6 +38,7 @@ navigator.mediaDevices
     addVideoStream(myVideo, stream);
 
     peer.on("call", (call) => {
+      console.log('call');
       call.answer(stream);
       const video = document.createElement("video");
       call.on("stream", (userVideoStream) => {
@@ -59,6 +60,7 @@ const connectToNewUser = (userId, stream) => {
 };
 
 peer.on("open", (id) => {
+  console.log('open')
   socket.emit("join-room", ROOM_ID, id, user);
 });
 
@@ -74,8 +76,11 @@ let text = document.querySelector("#chat_message");
 let send = document.getElementById("send");
 let messages = document.querySelector(".messages");
 
-send.addEventListener("click", (e) => {
+send.addEventListener("click", function (e) {
+  console.log('e', e);
+  // console.log('clicl')
   if (text.value.length !== 0) {
+    console.log('emit', text.value)
     socket.emit("message", text.value);
     text.value = "";
   }

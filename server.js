@@ -17,7 +17,6 @@ app.use("/peerjs", peerServer);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  console.log("Join")
   res.redirect(`/${uuidv4()}`);
 });
 
@@ -35,4 +34,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3007);
+server.listen(process.env.PORT || 3030);
