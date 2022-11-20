@@ -23,7 +23,6 @@ const user = prompt("Enter your name");
 
 var peer = new Peer(undefined, {
   host: 'https://meet.medcares.net',
-  port: 443,
   path: '/peerjs',
   secure: true,
 });
