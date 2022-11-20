@@ -68,7 +68,7 @@ var peer = new Peer(undefined, {
   // Dj1QPR8Gu05KwQ==
   // -----END CERTIFICATE REQUEST-----
   // `,
-  host: 'meet.medcares.net',
+  host: 'wss://meet.medcares.net',
     secure: true,
     port: 443,
     path: '/peerjs',
