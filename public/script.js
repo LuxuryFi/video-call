@@ -23,7 +23,7 @@ const user = prompt("Enter your name");
 
 var peer = new Peer(undefined, {
   host: '35.200.80.187',
-  port: 3007,
+  port: 443,
   path: '/peerjs',
 });
 
