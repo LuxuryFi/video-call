@@ -8,6 +8,11 @@ const io = require("socket.io")(server, {
     origin: '*'
   }
 });
+
+const socket = io('meet.medcares.net', {
+  transports: ['websocket', 'xhr-polling']
+});
+
 const { ExpressPeerServer } = require("peer");
 const peerServer = ExpressPeerServer(server, {
   debug: true,
