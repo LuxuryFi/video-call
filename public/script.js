@@ -69,7 +69,8 @@ var peer = new Peer(undefined, {
   // -----END CERTIFICATE REQUEST-----
   // `,
   host: 'meet.medcares.net',
-    secure: true
+    secure: true,
+    port: 443,
 });
 
 let myVideoStream;
