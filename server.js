@@ -6,7 +6,8 @@ app.set("view engine", "ejs");
 const io = require("socket.io")(server, {
   cors: {
     origin: '*'
-  }
+  },
+  transports: ['websocket', 'xhr-polling']
 });
 
 const socket = io('meet.medcares.net', {
