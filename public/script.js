@@ -22,9 +22,9 @@ showChat.addEventListener("click", () => {
 const user = prompt("Enter your name");
 
 var peer = new Peer(undefined, {
-  path: '/peerjs',
+  host: 'meet.medcares.net',
   port: 443,
-  secure: true,
+  secure: true
 });
 
 let myVideoStream;
